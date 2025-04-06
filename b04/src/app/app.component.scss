@@ -1,0 +1,10 @@
+.main {
+  min-height: 100%;
+  margin-bottom: -40px;
+  background: #ddd;
+}
+.main:after {
+  content: "";
+  display: block;
+  height: 40px;
+}
