@@ -1,6 +1,6 @@
 import {
   isPlatformBrowser
-} from "./chunk-TSR4YMXD.js";
+} from "./chunk-VJE4L4UK.js";
 import {
   ElementRef,
   Injectable,
@@ -8,7 +8,7 @@ import {
   inject,
   setClassMetadata,
   ɵɵdefineInjectable
-} from "./chunk-KIPEQZ7N.js";
+} from "./chunk-5SLB7SFU.js";
 
 // node_modules/@angular/cdk/fesm2022/element-08c51fcd.mjs
 function coerceNumberProperty(value, fallbackValue = 0) {
@@ -90,4 +90,4 @@ export {
   coerceElement,
   Platform
 };
-//# sourceMappingURL=chunk-ZMSSMEIN.js.map
+//# sourceMappingURL=chunk-ID5JCSM7.js.map

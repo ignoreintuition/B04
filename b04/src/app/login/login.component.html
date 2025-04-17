@@ -1,12 +1,13 @@
-<form class="example-form">
+<form [formGroup]="loginForm" class="example-form" (ngSubmit)="submit()">
   <p>
     <mat-form-field class="example-full-width">
       <mat-label>User Name</mat-label>
-      <textarea matInput placeholder=""></textarea>
+      <textarea matInput placeholder="" formControlName="email"></textarea>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Password</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput formControlName="password"></textarea>
     </mat-form-field>
+    <button type="submit">Login</button>
   </p>
 </form>

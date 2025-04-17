@@ -4,14 +4,14 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-OUK63IHD.js";
+} from "./chunk-S3SYZ6ER.js";
 import {
   _CdkPrivateStyleLoader
-} from "./chunk-5IO4ZE6D.js";
+} from "./chunk-6QEOOHN3.js";
 import {
   Platform,
   coerceElement
-} from "./chunk-ZMSSMEIN.js";
+} from "./chunk-ID5JCSM7.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -24,7 +24,6 @@ import {
   NgModule,
   NgZone,
   ViewEncapsulation,
-  __spreadValues,
   inject,
   setClassMetadata,
   ɵɵclassProp,
@@ -32,7 +31,10 @@ import {
   ɵɵdefineDirective,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-KIPEQZ7N.js";
+} from "./chunk-5SLB7SFU.js";
+import {
+  __spreadValues
+} from "./chunk-S35MAB2V.js";
 
 // node_modules/@angular/material/fesm2022/ripple-5bdada85.mjs
 var RippleState;
@@ -672,4 +674,4 @@ export {
   _StructuralStylesLoader,
   MatRippleModule
 };
-//# sourceMappingURL=chunk-K73WW3NO.js.map
+//# sourceMappingURL=chunk-HCTR7PHZ.js.map

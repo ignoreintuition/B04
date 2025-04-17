@@ -1,21 +1,20 @@
 import {
+  BidiModule
+} from "./chunk-PNN2A3NM.js";
+import {
   _CdkPrivateStyleLoader,
   _bindEventWithOptions
-} from "./chunk-5IO4ZE6D.js";
+} from "./chunk-6QEOOHN3.js";
 import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-ZMSSMEIN.js";
-import {
-  BidiModule
-} from "./chunk-RTPGYGLA.js";
+} from "./chunk-ID5JCSM7.js";
 import {
   DOCUMENT
-} from "./chunk-TSR4YMXD.js";
+} from "./chunk-VJE4L4UK.js";
 import {
   APP_ID,
-  BehaviorSubject,
   CSP_NONCE,
   ChangeDetectionStrategy,
   Component,
@@ -28,41 +27,44 @@ import {
   Input,
   NgModule,
   NgZone,
-  Observable,
   Output,
   QueryList,
   RendererFactory2,
-  Subject,
-  Subscription,
   ViewEncapsulation,
-  __spreadValues,
   afterNextRender,
   booleanAttribute,
-  combineLatest,
-  concat,
-  debounceTime,
-  distinctUntilChanged,
   effect,
-  filter,
   inject,
-  isObservable,
   isSignal,
-  map,
-  of,
   setClassMetadata,
   signal,
-  skip,
-  startWith,
-  take,
-  takeUntil,
-  tap,
   ɵɵNgOnChangesFeature,
   ɵɵdefineComponent,
   ɵɵdefineDirective,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-KIPEQZ7N.js";
+} from "./chunk-5SLB7SFU.js";
+import {
+  BehaviorSubject,
+  Observable,
+  Subject,
+  Subscription,
+  __spreadValues,
+  combineLatest,
+  concat,
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  isObservable,
+  map,
+  of,
+  skip,
+  startWith,
+  take,
+  takeUntil,
+  tap
+} from "./chunk-S35MAB2V.js";
 
 // node_modules/@angular/cdk/fesm2022/fake-event-detection-7055b1bd.mjs
 function isFakeMousedownFromScreenReader(event) {
@@ -3116,9 +3118,6 @@ var MatCommonModule = class _MatCommonModule {
 })();
 
 export {
-  coerceArray,
-  normalizePassiveListenerOptions,
-  _getEventTarget,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   ENTER,
@@ -3128,11 +3127,14 @@ export {
   UP_ARROW,
   RIGHT_ARROW,
   DOWN_ARROW,
+  _getEventTarget,
+  normalizePassiveListenerOptions,
   FocusMonitor,
+  coerceArray,
   ObserversModule,
   _IdGenerator,
   hasModifierKey,
   FocusKeyManager,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-OUK63IHD.js.map
+//# sourceMappingURL=chunk-S3SYZ6ER.js.map
