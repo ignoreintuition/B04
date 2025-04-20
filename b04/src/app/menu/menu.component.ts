@@ -11,19 +11,17 @@ import { AuthService } from '../auth.service';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent implements OnInit {
-  loggedIn = true;
   constructor(
     private authService: AuthService,
-
     private router: Router,
   ) {}
-  ngOnInit() {
-    this.loggedIn = localStorage.getItem('token') === null;
-  }
+  ngOnInit() {}
 
+  loggedIn() {
+    return this.authService.isLoggedIn();
+  }
   logout() {
-    localStorage.setItem('token', '');
-    this.loggedIn = false;
+    localStorage.removeItem('token');
     this.router.navigate(['/login']);
     return;
   }

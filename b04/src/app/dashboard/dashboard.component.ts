@@ -3,10 +3,17 @@ import { ArticleComponent } from '../article/article.component';
 import { AuthService } from '../auth.service';
 import { DataService } from '../data.service';
 import { NgFor } from '@angular/common';
+import { TechnicalDetailsComponent } from '../technical-details/technical-details.component';
+import { TopicSummaryComponent } from '../topic-summary/topic-summary.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ArticleComponent, NgFor],
+  imports: [
+    ArticleComponent,
+    TechnicalDetailsComponent,
+    TopicSummaryComponent,
+    NgFor,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
