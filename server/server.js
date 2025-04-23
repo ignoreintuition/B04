@@ -4,6 +4,11 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import { expressjwt } from "express-jwt";
+import {
+  admissionSchema,
+  newsSchema,
+  enrollmentSchema,
+} from "./schema/schema.js";
 
 const app = express();
 const port = 3000;
@@ -16,19 +21,11 @@ const users = [
 
 mongoose.connect("mongodb://localhost:27017/ninernet");
 
-const { Schema, model } = mongoose;
-
-const newsSchema = new Schema(
-  {
-    title: String,
-    body: String,
-  },
-  {
-    collection: "news",
-  },
-);
+const { model } = mongoose;
 
 const News = model("News", newsSchema);
+const Enrollment = model("Enrollment", enrollmentSchema);
+const Admission = model("Admission", admissionSchema);
 
 app.use(
   bodyParser.urlencoded({
@@ -111,6 +108,22 @@ app.use(function (err, req, res, next) {
 
 app.get("/api/", jwtMW, async (req, res) => {
   const data = await News.find({});
+  res.json({
+    success: true,
+    data: data,
+  });
+});
+
+app.get("/api/enrollment", jwtMW, async (req, res) => {
+  const data = await Enrollment.find({});
+  res.json({
+    success: true,
+    data: data,
+  });
+});
+
+app.get("/api/admission", jwtMW, async (req, res) => {
+  const data = await Admission.find({});
   res.json({
     success: true,
     data: data,

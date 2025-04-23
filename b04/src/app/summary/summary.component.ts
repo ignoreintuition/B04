@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-summary',
@@ -7,9 +9,51 @@ import { AuthService } from '../auth.service';
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.scss',
 })
-export class SummaryComponent {
-  constructor(private authService: AuthService) {}
+export class SummaryComponent implements OnInit {
+  enrollment: any[] = [];
+  data: any[] = [];
+  chart: any;
+  colors = ['#ea5545', '#27aeef'];
+  config: ChartConfiguration = {
+    type: 'doughnut',
+    data: {
+      labels: [],
+      datasets: [
+        {
+          data: [],
+          label: 'Admissions',
+          backgroundColor: this.colors,
+          hoverOffset: 4,
+        },
+      ],
+    },
+    options: {},
+  };
+  constructor(
+    private authService: AuthService,
+    private dataService: DataService,
+  ) {}
   ngOnInit() {
     this.authService.validate();
+    this.dataService.getAdmission();
+  }
+  ngAfterViewInit() {
+    if (this.chart) this.chart.destroy();
+    this.dataService.admissionData$.subscribe((res: any) => {
+      const canvas: HTMLCanvasElement = document.getElementById(
+        'chart',
+      ) as HTMLCanvasElement;
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          this.config.data.labels = res?.data.map((d: any) => d.residency);
+          this.config.data.datasets[0].data = res?.data.map(
+            (d: any) => d.tuition,
+          );
+          this.chart = new Chart(ctx, this.config);
+        }
+      }
+    });
   }
 }
