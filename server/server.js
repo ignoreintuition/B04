@@ -19,7 +19,9 @@ const users = [
   { id: 2, username: "brian", password: "456" },
 ];
 
-mongoose.connect("mongodb://localhost:27017/ninernet");
+mongoose.connect(
+  "mongodb+srv://doadmin:256UGf7a38rZS40s@db-mongodb-nyc3-23304-a1f5ced7.mongo.ondigitalocean.com/ninernet?tls=true&authSource=admin&replicaSet=db-mongodb-nyc3-23304",
+);
 
 const { model } = mongoose;
 
@@ -108,6 +110,7 @@ app.use(function (err, req, res, next) {
 
 app.get("/api/", jwtMW, async (req, res) => {
   const data = await News.find({});
+  console.log(data);
   res.json({
     success: true,
     data: data,
