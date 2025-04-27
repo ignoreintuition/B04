@@ -24,7 +24,7 @@ export class AuthService {
     };
     this.http
       .post<any>(
-        'http://localhost:3000/api/login',
+        'http://165.227.114.183:3000/api/login',
         { username, password },
         httpOptions,
       )
@@ -62,7 +62,11 @@ export class AuthService {
       }),
     };
     this.http
-      .post<any>('http://localhost:3000/api/validate', { token }, httpOptions)
+      .post<any>(
+        'http://165.227.114.183:3000/api/validate',
+        { token },
+        httpOptions,
+      )
       .subscribe((res: any) => {
         if (res.success !== true) {
           this.loggedIn = false;

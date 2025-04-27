@@ -1,11 +1,13 @@
 <div>
   <app-topic-summary />
   <app-technical-details />
-  <h2>News</h2>
-  <app-article
-    *ngFor="let article of articles"
-    [headerContent]="article.title"
-    [bodyContent]="article.body"
-  >
-  </app-article>
+  <div id="articles">
+    <app-article
+      *ngFor="let article of articles"
+      [headerContent]="article.title"
+      [bodyContent]="article.body"
+    >
+    </app-article>
+    <p>Source: https://inside.charlotte.edu/news-features/</p>
+  </div>
 </div>

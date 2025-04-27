@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import {
   FormControl,
   FormGroup,
@@ -16,6 +17,7 @@ import { AuthService } from '../auth.service';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
   ],
   selector: 'app-login',
   templateUrl: './login.component.html',

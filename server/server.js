@@ -9,19 +9,12 @@ import {
   newsSchema,
   enrollmentSchema,
 } from "./schema/schema.js";
+import { secretKey, users, dbConn } from "./secrets.js";
 
 const app = express();
 const port = 3000;
-const secretKey = "secret key";
 
-const users = [
-  { id: 1, username: "fabio", password: "123" },
-  { id: 2, username: "brian", password: "456" },
-];
-
-mongoose.connect(
-  "mongodb+srv://doadmin:256UGf7a38rZS40s@db-mongodb-nyc3-23304-a1f5ced7.mongo.ondigitalocean.com/ninernet?tls=true&authSource=admin&replicaSet=db-mongodb-nyc3-23304",
-);
+mongoose.connect(dbConn);
 
 const { model } = mongoose;
 
@@ -42,8 +35,7 @@ const jwtMW = expressjwt({
 });
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "Content-type, Authorization");
   next();
   return;

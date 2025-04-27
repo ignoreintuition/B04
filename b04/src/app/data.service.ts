@@ -20,7 +20,7 @@ export class DataService {
   constructor(private http: HttpClient) {}
   public login() {
     this.http
-      .get<any>('http://localhost:3000/api/login')
+      .get<any>(`http://165.227.114.183:3000/api/login`)
       .subscribe((res) => this.dataSubject.next(res));
   }
   public getNews(): any {
@@ -32,7 +32,7 @@ export class DataService {
       headers: new HttpHeaders(headerDict),
     };
     this.http
-      .get<any>('http://localhost:3000/api', requestOptions)
+      .get<any>(`http://165.227.114.183:3000/api`, requestOptions)
       .subscribe((res) => this.dataSubject.next(res));
   }
   public getEnrollment(): any {
@@ -44,7 +44,7 @@ export class DataService {
       headers: new HttpHeaders(headerDict),
     };
     this.http
-      .get<any>('http://localhost:3000/api/enrollment', requestOptions)
+      .get<any>(`http://165.227.114.183:3000/api/enrollment`, requestOptions)
       .subscribe((res) => this.enrollmentDataSubject.next(res));
   }
 
@@ -57,7 +57,7 @@ export class DataService {
       headers: new HttpHeaders(headerDict),
     };
     this.http
-      .get<any>('http://localhost:3000/api/admission', requestOptions)
+      .get<any>(`http://165.227.114.183:3000/api/admission`, requestOptions)
       .subscribe((res) => this.admissionDataSubject.next(res));
   }
 }

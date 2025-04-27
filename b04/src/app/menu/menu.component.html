@@ -3,21 +3,26 @@
     <div>
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/">Home</a>
+          <a class="nav-link" tabindex="1" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/reports">Reports</a>
+          <a class="nav-link" tabindex="2" routerLink="/reports">Reports</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/summary">Summary</a>
+          <a class="nav-link" tabindex="3" routerLink="/summary">Summary</a>
         </li>
         <li class="nav-item">
-          <a [hidden]="loggedIn()" class="nav-link" routerLink="/login"
+          <a
+            tabindex="4"
+            [hidden]="loggedIn()"
+            class="nav-link"
+            routerLink="/login"
             >Login</a
           >
         </li>
         <li class="nav-item">
           <a
+            tabindex="5"
             [hidden]="!loggedIn()"
             [routerLink]=""
             (click)="logout()"

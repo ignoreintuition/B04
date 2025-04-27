@@ -2,12 +2,17 @@
   <p>
     <mat-form-field class="example-full-width">
       <mat-label>User Name</mat-label>
-      <textarea matInput placeholder="" formControlName="email"></textarea>
+      <input
+        aria-labelledby="user name"
+        matInput
+        placeholder=""
+        formControlName="email"
+      />
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Password</mat-label>
-      <textarea matInput formControlName="password"></textarea>
+      <input aria-labelledby="password" matInput formControlName="password" />
     </mat-form-field>
-    <button type="submit">Login</button>
+    <button mat-stroked-button type="submit">Login</button>
   </p>
 </form>
